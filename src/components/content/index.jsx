@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-import ChooseCampaign from '../campaigns/ChooseCampaign'
+import { Routes, Route } from "react-router-dom";
+import ChooseCampaign from '../campaigns/ChooseCampaign';
+import CreateCampaign from '../campaigns/CreateCampaign';
+
 
 const ContentStyles = styled.section`
     padding: 5vh 5vw 5vh;
@@ -11,7 +14,11 @@ const ContentStyles = styled.section`
 export default function Content() {
     return(
         <ContentStyles>
-            <ChooseCampaign />
+            <Routes>
+                <Route path="/" element={<ChooseCampaign />}> </Route>
+                <Route path="/create" element={<CreateCampaign />}> </Route>
+
+            </Routes>
         </ContentStyles>
     )
 }

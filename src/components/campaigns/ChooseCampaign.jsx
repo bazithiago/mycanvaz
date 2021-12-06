@@ -1,6 +1,8 @@
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 import Button from '../_buttons/index';
-import CampaignCard from './CampaignCard'
+import CampaignCard from './CampaignCard';
+
 
 const ChooseCampaignStyles = styled.div`
     display: flex;
@@ -37,7 +39,7 @@ export default function ChooseCampaign() {
             <div className="title">
                 <h2>Escolha a campanha</h2>
             </div>
-            <CampaignCard />
+            <Link to="create"><CampaignCard /></Link>
             <CampaignCard />
             <CampaignCard />
             <CampaignCard />

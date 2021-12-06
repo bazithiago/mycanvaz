@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import { ReactComponent as Logo } from '../../assets/icons/logo.svg'
 import { User } from 'react-feather'
 
@@ -43,10 +44,12 @@ const HeaderStyles = styled.header`
 export default function Header() {
     return(
         <HeaderStyles>
-            <div className="logo">
-                <Logo fill='white'/>
-                <h1><span>My</span>Canvaz</h1>
-            </div>
+            <Link to="/">
+                <div className="logo">
+                    <Logo fill='white'/>
+                    <h1><span>My</span>Canvaz</h1>
+                </div>
+            </Link>
             <div className="user">
                 <User />
             </div>
