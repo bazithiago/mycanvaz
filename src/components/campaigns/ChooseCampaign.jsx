@@ -25,6 +25,10 @@ const ChooseCampaignStyles = styled.div`
     div.button {
         margin-top: 28px;
     }
+
+    @media screen and (min-width: 1024px) {
+        width: 40vw;  
+    }
 `
 
 export default function ChooseCampaign() {

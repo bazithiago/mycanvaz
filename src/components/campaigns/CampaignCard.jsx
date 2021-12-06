@@ -55,6 +55,7 @@ const CampaignCardStyles = styled.div`
             -webkit-box-orient: vertical;
         }
     }
+
 `
 
 // export default function CampaignCard({ title, description, image }) {
