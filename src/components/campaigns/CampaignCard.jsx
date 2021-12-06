@@ -41,11 +41,6 @@ const CampaignCardStyles = styled.div`
         flex-direction: column;
         justify-content: space-between;
 
-        h3 {
-            color: var(--blue-one);
-            font-size: 1.25rem;
-        }
-
         p {
             font-size: 0.85rem;
             color: var(--grey-one);

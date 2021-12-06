@@ -13,11 +13,6 @@ const ChooseCampaignStyles = styled.div`
         width: 100%;
         text-align: left;
         margin-bottom: 3vh;
-
-        h2 {
-            color: var(--blue-one);
-            font-size: 1.75rem
-        }
     }
 
     div.card + div.card {

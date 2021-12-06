@@ -44,6 +44,16 @@ const GlobalStyle = createGlobalStyle`
         cursor: pointer;
     }
 
+    h2 {
+        color: var(--blue-one);
+        font-size: 1.75rem
+    }
+
+    h3 {
+        color: var(--blue-one);
+        font-size: 1.25rem;
+    }
+
 `;
  
 export default GlobalStyle;
