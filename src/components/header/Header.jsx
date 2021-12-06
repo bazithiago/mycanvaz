@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { ReactComponent as Logo } from '../../icons/logo.svg'
+import { ReactComponent as Logo } from '../../assets/icons/logo.svg'
 import { User } from 'react-feather'
 
-const HeaderStyles = styled.div`
+const HeaderStyles = styled.header`
     background-color: var(--blue-one);
     color: white;
     width: 100vw;
@@ -12,7 +12,9 @@ const HeaderStyles = styled.div`
     align-items: center;
     justify-content: space-between;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    position: -webkit-sticky;
     position: sticky;
+    top: 0;
 
     div.logo {
         display: flex;
