@@ -21,6 +21,10 @@ const CampaignArtsStyles = styled.div`
     div.card + div.card {
         margin-top: 1.25rem;
     }
+
+    @media screen and (min-width: 1024px) {
+        width: 40vw;  
+    }
 `
 
 export default function CampaignArts() {

@@ -14,7 +14,11 @@ const ChooseCampaignStyles = styled.div`
         text-align: left;
         margin-bottom: 2rem;
     }
-
+    
+    .card {
+        margin-top: 1.25rem;
+    }
+    
     div.card + div.card {
         margin-top: 1.25rem;
     }

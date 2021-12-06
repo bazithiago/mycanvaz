@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import styled from 'styled-components';
-import { TextButton } from '../../_atomicElements/buttons';
+import Button, { TextButton } from '../../_atomicElements/buttons';
+import Modal from '../../_atomicElements/Modal'
 
 const ArtCardStyles = styled.div`
     width: 100%;
@@ -43,12 +45,28 @@ const ArtCardStyles = styled.div`
     div.buttons {
         display: flex;
         justify-content: flex-end;
+        margin-right: 1rem;
 
         a + a {
             margin-left: 3rem;
         }
     }
 
+`
+
+const ModalSyles = styled.div`
+    
+    & > div > div > div > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+    }
 `
 
 // export default function ArtCard({ title, description, image }) {
@@ -65,7 +83,13 @@ const ArtCardStyles = styled.div`
 //     )
 // }
 
-export default function ArtCard({ title, description, image }) {
+export default function ArtCard({ title}) {
+    const [showModal, setShowModal] = useState(false);
+
+    const openModal = () => {
+        setShowModal(prev => !prev);
+    };
+
     return(
         <ArtCardStyles className="card">
             <div className="image">
@@ -75,9 +99,17 @@ export default function ArtCard({ title, description, image }) {
                 <h3>Nome da arte curto grande ou pequeno tanto faz</h3>
 
                 <div className="buttons">
-                    <TextButton textButton>visualizar</TextButton>
+                    <TextButton textButton onClick={openModal}>visualizar</TextButton>
                     <TextButton textButton>baixar</TextButton>
-                </div>
+                </div>               
+
+                <ModalSyles>
+                    <Modal showModal={showModal} setShowModal={setShowModal}>
+                        <img src='https://lulacerda.ig.com.br/wp-content/uploads/2016/11/14915488_1173123012733911_861592202832504713_n.jpg' alt={title} />
+                        <Button primary>download</Button>
+                    </Modal>
+
+                </ModalSyles>
             </div>
         </ArtCardStyles>
     )

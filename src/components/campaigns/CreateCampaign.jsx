@@ -90,8 +90,6 @@ export default function CreateCampaign() {
 
             
                 <ButtonCreate primary><Link to='/downloads'>criar campanha {`>>`}</Link></ButtonCreate>
-            
-            
         </CreateCampaignStyles>
     )
 }
