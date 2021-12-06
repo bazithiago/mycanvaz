@@ -41,4 +41,13 @@ const Button = styled.button`
     };
 `
 
+export const TextButton = styled.a`
+    font-weight: 900;
+    color: var(--primary);
+
+    :hover {
+        color: var(--grey-one);
+    }
+`
+
 export default Button;

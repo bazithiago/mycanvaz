@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
-import Button from '../_buttons/index';
-import CampaignCard from './CampaignCard';
+import Button from '../_atomicElements/buttons';
+import CampaignCard from './_cards/CampaignCard';
 
 
 const ChooseCampaignStyles = styled.div`
@@ -12,11 +12,11 @@ const ChooseCampaignStyles = styled.div`
     div.title {
         width: 100%;
         text-align: left;
-        margin-bottom: 3vh;
+        margin-bottom: 2rem;
     }
 
     div.card + div.card {
-        margin-top: 18px;
+        margin-top: 1.25rem;
     }
 
     div.button {
@@ -34,7 +34,7 @@ export default function ChooseCampaign() {
             <div className="title">
                 <h2>Escolha a campanha</h2>
             </div>
-            <Link to="create"><CampaignCard /></Link>
+            <Link to='/create' className='card'> <CampaignCard /> </Link>
             <CampaignCard />
             <CampaignCard />
             <CampaignCard />
