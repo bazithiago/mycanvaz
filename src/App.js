@@ -1,8 +1,12 @@
-import Header from './assets/components/header/Header';
+import Header from './components/header/Header';
+import Content from './components/content/';
 
 function App() {
   return (
-    <Header />
+    <>
+      <Header />
+      <Content />
+    </>
   );
 }
 
