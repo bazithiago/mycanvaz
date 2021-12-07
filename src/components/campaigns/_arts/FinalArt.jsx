@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const InstagramStyles = styled.div`
+const FinalArtStyles = styled.div`
     width: 600px;
     height: 600px;
     background-color: var(--grey-one);
@@ -15,17 +15,17 @@ const InstagramStyles = styled.div`
     }
 
     img {
-        width: 20%;
+        width: 10%;
     }
 `
 
 
 
-export default function Instagram({ artData }) {
-    const { eventName, personName, eventDate, local, partner, logo1, logo2 } = artData;
+export default function FinalArt({ imgBg, fullFormData }) {
+    const { eventName, personName, eventDate, local, partner, logo1, logo2 } = fullFormData;
 
     return(
-        <InstagramStyles>
+        <FinalArtStyles>
             <p>{eventName}</p>
             <p>com {personName}</p>
             <p>data: {eventDate}</p>
@@ -33,7 +33,8 @@ export default function Instagram({ artData }) {
             <p>{partner}</p>
             <img src={logo1} alt="" />
             <img src={logo2} alt="" />
-        </InstagramStyles>
+            <img src={imgBg} alt="" />
+        </FinalArtStyles>
     )
 }
 

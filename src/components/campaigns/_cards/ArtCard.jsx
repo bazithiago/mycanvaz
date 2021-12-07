@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import Button, { TextButton } from '../../_atomicElements/buttons';
 import Modal from '../../_atomicElements/Modal'
-import Instagram from '../_arts/Instagram'
+import FinalArt from '../_arts/FinalArt'
 
 const ArtCardStyles = styled.div`
     width: 100%;
@@ -70,7 +70,7 @@ const ModalSyles = styled.div`
     }
 `
 
-export default function ArtCard({ piece }) {
+export default function ArtCard({ piece, fullFormData }) {
     const [showModal, setShowModal] = useState(false);
 
     const openModal = () => {
@@ -92,7 +92,7 @@ export default function ArtCard({ piece }) {
 
                 <ModalSyles>
                     <Modal showModal={showModal} setShowModal={setShowModal}>
-                        {/* <Instagram artData={artData}/> */}
+                        <FinalArt imgBg={piece.img} fullFormData={fullFormData}/>
                         <Button primary>download</Button>
                     </Modal>
                 </ModalSyles>

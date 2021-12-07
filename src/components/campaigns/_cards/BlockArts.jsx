@@ -6,13 +6,13 @@ const BlockArtStyles = styled.div`
 
 `
 
-export default function BlockArt({ destination, pieces }) {
+export default function BlockArt({ destination, pieces, fullFormData }) {
     return(
         <BlockArtStyles>
             <Separator>{destination}</Separator>
             {pieces.map(piece => {
                 return(
-                    <ArtCard piece={piece}/>
+                    <ArtCard piece={piece} fullFormData={fullFormData}/>
                 )
             })}
         </BlockArtStyles>

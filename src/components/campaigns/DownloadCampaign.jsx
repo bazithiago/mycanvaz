@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import Separator from '../_atomicElements/separators';
-import ArtCard from './_cards/ArtCard';
 import BlockArt from './_cards/BlockArts';
 
 const DownloadCampaignStyles = styled.div`
@@ -37,7 +35,7 @@ export default function DownloadCampaign({ campaignData }) {
     const logo1 = sessionStorage.getItem('logo1');
     const logo2 = sessionStorage.getItem('logo1');
 
-    const artData = { eventName, personName, eventDate, local, partner, logo1, logo2 }
+    const fullFormData = { eventName, personName, eventDate, local, partner, logo1, logo2 }
 
     return(
         <DownloadCampaignStyles>
@@ -48,7 +46,7 @@ export default function DownloadCampaign({ campaignData }) {
 
             {campaignData.arts.map(art => {
                 return (
-                    <BlockArt destination={art.destination} pieces={art.pieces}/>
+                    <BlockArt destination={art.destination} pieces={art.pieces} fullFormData={fullFormData}/>
                 )
             })}
 
