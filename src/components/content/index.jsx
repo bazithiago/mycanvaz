@@ -20,12 +20,13 @@ const screenStates = {
 
 export default function Content({ screenState, setScreenState }) {
     const [ campaignData, setCampaignData ] = useState({})
+    const [ artData, setArtData ] = useState({})
     
     return(
         <ContentStyles>
             {screenState === screenStates.CHOOSE_CAMPAIGN && <ChooseCampaign setScreenState={setScreenState} setCampaignData={setCampaignData}/>}
-            {screenState === screenStates.CREATE_CAMPAIGN && <CreateCampaign setScreenState={setScreenState} campaignData={campaignData} />}
-            {screenState === screenStates.DOWNLOAD_CAMPAIGN && <DownloadCampaign setScreenState={setScreenState} campaignData={campaignData}/>}
+            {screenState === screenStates.CREATE_CAMPAIGN && <CreateCampaign setScreenState={setScreenState} campaignData={campaignData} setArtData={setArtData}/>}
+            {screenState === screenStates.DOWNLOAD_CAMPAIGN && <DownloadCampaign setScreenState={setScreenState} campaignData={campaignData} />}
             
         </ContentStyles>
     )

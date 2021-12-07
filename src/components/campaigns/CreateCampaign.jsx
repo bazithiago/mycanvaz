@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styled from 'styled-components';
 import Button from '../_atomicElements/buttons';
 
@@ -5,6 +6,7 @@ const CreateCampaignStyles = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 
     div.title {
         width: 100%;
@@ -59,6 +61,10 @@ const CreateCampaignStyles = styled.div`
             margin-top: 2rem;
         }
     }
+
+    @media screen and (min-width: 1024px) {
+        width: 40vw;  
+    }
 `
 
 const ButtonCreate = styled(Button)`
@@ -66,11 +72,37 @@ const ButtonCreate = styled(Button)`
     bottom: 5vh;
 `
 
-export default function CreateCampaign({ setScreenState, campaignData }) {
-    
-    function handleCreateCampaign() {    
+export default function CreateCampaign({ setScreenState, campaignData, setArtData }) {
+    const setItem = (key, value) => sessionStorage.setItem(`${key}`, `${value}`);
+    const [ eventTitle, setEventTitle ] = useState('')
+    const [ info, setInfo ] = useState('')
+
+
+    function handleCreateCampaign() {
         setScreenState('DOWNLOAD_CAMPAIGN')
     }
+
+    const imageUpload = (e) => {
+        const file = e.target.files[0];
+        if (file.size > 4e6) {
+           window.alert("Subir um arquivo menor que 4MB");
+           document.location.reload(true);
+        }
+
+        const getBase64 = (file) => {
+            return new Promise((resolve,reject) => {
+               const reader = new FileReader();
+               reader.onload = () => resolve(reader.result);
+               reader.onerror = error => reject(error);
+               reader.readAsDataURL(file);
+            });
+          }
+          
+
+        getBase64(file).then(base64 => {
+          sessionStorage["imgLocal"] = base64;
+        });
+    };
 
     return(
         <CreateCampaignStyles>
@@ -81,13 +113,13 @@ export default function CreateCampaign({ setScreenState, campaignData }) {
 
             <form action="submit">
                 <label htmlFor="title">Título</label>
-                <input type="text" name="title" id="title" placeholder="Exemplo de placeholder" />
+                <input type="text" name="title" id="title" placeholder="Exemplo de placeholder" value={eventTitle} onChange={(e) => {setEventTitle(setItem('eventTitle', e.target.value))}}/>
 
                 <label htmlFor="title">Outra informção</label>
-                <input type="text" name="title" id="title" placeholder="Exemplo de placeholder" />
+                <input type="text" name="title" id="title" placeholder="Exemplo de placeholder" value={info} onChange={(e) => {setInfo(setItem('info', e.target.value))}}/>
 
-                <label htmlFor="upload">Upload foto</label>
-                <input type="file" name="upload" id="upload" />
+                <label htmlFor="inputFile">Upload foto</label>
+                <input type="file" name="inputFile" id="inputFile" accept=".png, .jpg, .jpeg" onChange={imageUpload}/>
 
             </form>
 

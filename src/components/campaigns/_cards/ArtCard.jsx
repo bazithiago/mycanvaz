@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import Button, { TextButton } from '../../_atomicElements/buttons';
 import Modal from '../../_atomicElements/Modal'
+import Instagram from '../_arts/Instagram'
 
 const ArtCardStyles = styled.div`
     width: 100%;
@@ -69,21 +70,7 @@ const ModalSyles = styled.div`
     }
 `
 
-// export default function ArtCard({ title, description, image }) {
-//     return(
-//         <ArtCardStyles className="card">
-//             <div className="image">
-//                 <img src={image} alt={title} />
-//             </div>
-//             <div className="content">
-//                 <h3>{title}</h3>
-//                 <p>{description}</p>
-//             </div>
-//         </CampaignCardStyles>
-//     )
-// }
-
-export default function ArtCard({ title}) {
+export default function ArtCard({ artData }) {
     const [showModal, setShowModal] = useState(false);
 
     const openModal = () => {
@@ -93,7 +80,7 @@ export default function ArtCard({ title}) {
     return(
         <ArtCardStyles className="card">
             <div className="image">
-                <img src='https://lulacerda.ig.com.br/wp-content/uploads/2016/11/14915488_1173123012733911_861592202832504713_n.jpg' alt={title} />
+                <img src='https://lulacerda.ig.com.br/wp-content/uploads/2016/11/14915488_1173123012733911_861592202832504713_n.jpg' alt=''/>
             </div>
             <div className="content">
                 <h3>Nome da arte curto grande ou pequeno tanto faz</h3>
@@ -105,7 +92,7 @@ export default function ArtCard({ title}) {
 
                 <ModalSyles>
                     <Modal showModal={showModal} setShowModal={setShowModal}>
-                        <img src='https://lulacerda.ig.com.br/wp-content/uploads/2016/11/14915488_1173123012733911_861592202832504713_n.jpg' alt={title} />
+                        <Instagram artData={artData}/>
                         <Button primary>download</Button>
                     </Modal>
 

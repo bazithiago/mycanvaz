@@ -28,13 +28,19 @@ const DownloadCampaignStyles = styled.div`
 `
 
 export default function DownloadCampaign({ campaignData }) {
+    const eventTitle = sessionStorage.getItem('eventTitle'); 
+    const info = sessionStorage.getItem('info'); 
+    const imgLocal = sessionStorage.getItem('imgLocal');
+
+    const artData = { eventTitle, info, imgLocal }
+
     return(
         <DownloadCampaignStyles>
             <div className="title">
                 <h2>{campaignData.title}</h2>
             </div>
             <Separator>feed instagram</Separator>
-            <ArtCard />
+            <ArtCard artData={artData}/>
             <ArtCard />
 
             <Separator>stories</Separator>
