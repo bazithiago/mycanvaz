@@ -28,11 +28,15 @@ const DownloadCampaignStyles = styled.div`
 `
 
 export default function DownloadCampaign({ campaignData }) {
-    const eventTitle = sessionStorage.getItem('eventTitle'); 
-    const info = sessionStorage.getItem('info'); 
-    const imgLocal = sessionStorage.getItem('imgLocal');
+    const eventName = sessionStorage.getItem('eventName'); 
+    const personName = sessionStorage.getItem('personName'); 
+    const eventDate = sessionStorage.getItem('eventDate');
+    const local = sessionStorage.getItem('local');
+    const partner = sessionStorage.getItem('partner');
+    const logo1 = sessionStorage.getItem('logo1');
+    const logo2 = sessionStorage.getItem('logo1');
 
-    const artData = { eventTitle, info, imgLocal }
+    const artData = { eventName, personName, eventDate, local, partner, logo1, logo2 }
 
     return(
         <DownloadCampaignStyles>

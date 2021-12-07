@@ -80,7 +80,7 @@ export default function ArtCard({ artData }) {
     return(
         <ArtCardStyles className="card">
             <div className="image">
-                <img src='https://lulacerda.ig.com.br/wp-content/uploads/2016/11/14915488_1173123012733911_861592202832504713_n.jpg' alt=''/>
+                <img src={'https://lulacerda.ig.com.br/wp-content/uploads/2016/11/14915488_1173123012733911_861592202832504713_n.jpg'} alt=''/>
             </div>
             <div className="content">
                 <h3>Nome da arte curto grande ou pequeno tanto faz</h3>

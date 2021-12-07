@@ -1,12 +1,14 @@
 export const campaigns = [
     {
-        title: 'título do db 1',
-        description: 'descrição do db 1',
-        image: '/img/campaigns/1.jpeg'
+        title: 'Black Friday',
+        description: 'Campanha para divulgação de palestras e workshops online - Black Friday 2021',
+        image: '/img/campaigns/blackfriday/bf1.jpg',
+        type: 'full'
     },
     {
-        title: 'título do db 2',
-        description: 'descrição do db 2',
-        image: '/img/campaigns/2.jpeg'
+        title: 'Dia das crianças',
+        description: 'Campanha dia das criaças no hotel - out/2021',
+        image: 'img/campaigns/diadascriancas/banner1.jpg',
+        type: 'simple'
     },
 ]
