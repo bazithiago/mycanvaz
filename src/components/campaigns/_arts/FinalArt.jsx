@@ -21,18 +21,18 @@ const FinalArtStyles = styled.div`
 
 
 
-export default function FinalArt({ imgBg, fullFormData }) {
-    const { eventName, personName, eventDate, local, partner, logo1, logo2 } = fullFormData;
+export default function FinalArt({ imgBg, formData }) {
+    // const { eventName, personName, eventDate, local, partner, logo1, logo2 } = formData;
+    const { title, description, highlight, destination } = formData
 
     return(
         <FinalArtStyles>
-            <p>{eventName}</p>
-            <p>com {personName}</p>
-            <p>data: {eventDate}</p>
-            <p>no canal {local}</p>
-            <p>{partner}</p>
-            <img src={logo1} alt="" />
-            <img src={logo2} alt="" />
+            <p>{title}</p>
+            <p>{description}</p>
+            <p>{highlight}</p>
+            <p>{destination}</p>
+            {/* <img src={logo1} alt="" />
+            <img src={logo2} alt="" /> */}
             <img src={imgBg} alt="" />
         </FinalArtStyles>
     )

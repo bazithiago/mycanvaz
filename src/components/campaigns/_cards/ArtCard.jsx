@@ -70,7 +70,7 @@ const ModalSyles = styled.div`
     }
 `
 
-export default function ArtCard({ piece, fullFormData }) {
+export default function ArtCard({ piece, formData }) {
     const [showModal, setShowModal] = useState(false);
 
     const openModal = () => {
@@ -92,7 +92,7 @@ export default function ArtCard({ piece, fullFormData }) {
 
                 <ModalSyles>
                     <Modal showModal={showModal} setShowModal={setShowModal}>
-                        <FinalArt imgBg={piece.img} fullFormData={fullFormData}/>
+                        <FinalArt imgBg={piece.img} formData={formData}/>
                         <Button primary>download</Button>
                     </Modal>
                 </ModalSyles>

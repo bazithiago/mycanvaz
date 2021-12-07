@@ -34,8 +34,20 @@ export default function DownloadCampaign({ campaignData }) {
     const partner = sessionStorage.getItem('partner');
     const logo1 = sessionStorage.getItem('logo1');
     const logo2 = sessionStorage.getItem('logo1');
+    const title = sessionStorage.getItem('title');
+    const description = sessionStorage.getItem('description');
+    const highlight = sessionStorage.getItem('highlight');
+    const destination = sessionStorage.getItem('destination');
 
     const fullFormData = { eventName, personName, eventDate, local, partner, logo1, logo2 }
+    const simpleFormData = { title, description, highlight, destination }
+    let formData 
+
+    if(campaignData.type === 'full') {
+        formData = fullFormData
+    } else {
+        formData = simpleFormData
+    }
 
     return(
         <DownloadCampaignStyles>
@@ -46,7 +58,7 @@ export default function DownloadCampaign({ campaignData }) {
 
             {campaignData.arts.map(art => {
                 return (
-                    <BlockArt destination={art.destination} pieces={art.pieces} fullFormData={fullFormData}/>
+                    <BlockArt destination={art.destination} pieces={art.pieces} formData={formData}/>
                 )
             })}
 
