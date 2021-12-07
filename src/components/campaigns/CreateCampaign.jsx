@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import Button from '../_buttons/index';
+import Button from '../_atomicElements/buttons';
 
 const CreateCampaignStyles = styled.div`
     display: flex;
@@ -67,7 +66,7 @@ const ButtonCreate = styled(Button)`
     bottom: 5vh;
 `
 
-export default function CreateCampaign() {
+export default function CreateCampaign({ setScreenState }) {
 
     return(
         <CreateCampaignStyles>
@@ -89,7 +88,7 @@ export default function CreateCampaign() {
             </form>
 
             
-                <ButtonCreate primary><Link to='/downloads'>criar campanha {`>>`}</Link></ButtonCreate>
+                <ButtonCreate primary onClick={() => setScreenState('DOWNLOAD_CAMPAIGN')}>criar campanha {`>>`}</ButtonCreate>
         </CreateCampaignStyles>
     )
 }

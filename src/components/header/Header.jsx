@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 import { ReactComponent as Logo } from '../../assets/icons/logo.svg'
 import { User } from 'react-feather'
 
@@ -16,10 +15,12 @@ const HeaderStyles = styled.header`
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+    z-index: 10;
 
     div.logo {
         display: flex;
         align-items: center;
+        cursor: pointer;
         
         svg {
             width: 15%;
@@ -41,15 +42,14 @@ const HeaderStyles = styled.header`
     }
 `
 
-export default function Header() {
+export default function Header({ setScreenState}) {
+
     return(
-        <HeaderStyles>
-            <Link to="/">
-                <div className="logo">
-                    <Logo fill='white'/>
-                    <h1><span>My</span>Canvaz</h1>
-                </div>
-            </Link>
+        <HeaderStyles onClick={() => setScreenState('CHOOSE_CAMPAIGN')}>
+            <div className="logo">
+                <Logo fill='white'/>
+                <h1><span>My</span>Canvaz</h1>
+            </div>
             <div className="user">
                 <User />
             </div>

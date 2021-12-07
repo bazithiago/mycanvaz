@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from "react-router-dom";
 import Button from '../_atomicElements/buttons';
 import CampaignCard from './_cards/CampaignCard';
 
@@ -15,10 +14,6 @@ const ChooseCampaignStyles = styled.div`
         margin-bottom: 2rem;
     }
     
-    .card {
-        margin-top: 1.25rem;
-    }
-    
     div.card + div.card {
         margin-top: 1.25rem;
     }
@@ -32,13 +27,20 @@ const ChooseCampaignStyles = styled.div`
     }
 `
 
-export default function ChooseCampaign() {
+export default function ChooseCampaign({ setScreenState }) {
+    
+    function handleClick(e) {
+        console.log(e)
+        console.log('clicou')
+        setScreenState('CREATE_CAMPAIGN')    
+    }
+
     return(
         <ChooseCampaignStyles>
             <div className="title">
                 <h2>Escolha a campanha</h2>
             </div>
-            <Link to='/create' className='card'> <CampaignCard /> </Link>
+            <CampaignCard handleClick={handleClick}/>
             <CampaignCard />
             <CampaignCard />
             <CampaignCard />

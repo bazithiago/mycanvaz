@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Separator from '../_atomicElements/separators';
 import ArtCard from './_cards/ArtCard';
 
-const CampaignArtsStyles = styled.div`
+const DownloadCampaignStyles = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,9 +27,9 @@ const CampaignArtsStyles = styled.div`
     }
 `
 
-export default function CampaignArts() {
+export default function DownloadCampaign() {
     return(
-        <CampaignArtsStyles>
+        <DownloadCampaignStyles>
             <div className="title">
                 <h2>Título da campanha</h2>
             </div>
@@ -40,6 +40,6 @@ export default function CampaignArts() {
             <Separator>stories</Separator>
             <ArtCard />
             <ArtCard />
-        </CampaignArtsStyles>
+        </DownloadCampaignStyles>
     )
 }

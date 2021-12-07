@@ -67,9 +67,9 @@ const CampaignCardStyles = styled.div`
 //     )
 // }
 
-export default function CampaignCard({ children }) {
+export default function CampaignCard({ children, handleClick }) {
     return(
-        <CampaignCardStyles className="card">
+        <CampaignCardStyles className="card" onClick={handleClick}>
             <div className="image">
                 <img src='https://lulacerda.ig.com.br/wp-content/uploads/2016/11/14915488_1173123012733911_861592202832504713_n.jpg' alt='' />
             </div>
