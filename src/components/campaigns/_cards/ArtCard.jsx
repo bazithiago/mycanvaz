@@ -70,7 +70,7 @@ const ModalSyles = styled.div`
     }
 `
 
-export default function ArtCard({ artData }) {
+export default function ArtCard({ piece }) {
     const [showModal, setShowModal] = useState(false);
 
     const openModal = () => {
@@ -80,10 +80,10 @@ export default function ArtCard({ artData }) {
     return(
         <ArtCardStyles className="card">
             <div className="image">
-                <img src={'https://lulacerda.ig.com.br/wp-content/uploads/2016/11/14915488_1173123012733911_861592202832504713_n.jpg'} alt=''/>
+                <img src={piece.img} alt=''/>
             </div>
             <div className="content">
-                <h3>Nome da arte curto grande ou pequeno tanto faz</h3>
+                <h3>{piece.title}</h3>
 
                 <div className="buttons">
                     <TextButton textButton onClick={openModal}>visualizar</TextButton>
@@ -92,10 +92,9 @@ export default function ArtCard({ artData }) {
 
                 <ModalSyles>
                     <Modal showModal={showModal} setShowModal={setShowModal}>
-                        <Instagram artData={artData}/>
+                        {/* <Instagram artData={artData}/> */}
                         <Button primary>download</Button>
                     </Modal>
-
                 </ModalSyles>
             </div>
         </ArtCardStyles>

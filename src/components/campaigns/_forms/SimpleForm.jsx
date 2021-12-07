@@ -73,8 +73,7 @@ export default function SimpleForm() {
 
     return(
         <SimpleFormStyles>
-            SIMPLE FORM
-
+            
             <form action="submit">
                 <label htmlFor="title">Título</label>
                 <input type="text" name="title" id="title" placeholder="Exemplo de placeholder" value={eventTitle} onChange={(e) => {setEventTitle(setItem('eventTitle', e.target.value))}}/>

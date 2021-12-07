@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Separator from '../_atomicElements/separators';
 import ArtCard from './_cards/ArtCard';
+import BlockArt from './_cards/BlockArts';
 
 const DownloadCampaignStyles = styled.div`
     display: flex;
@@ -43,13 +44,14 @@ export default function DownloadCampaign({ campaignData }) {
             <div className="title">
                 <h2>{campaignData.title}</h2>
             </div>
-            <Separator>feed instagram</Separator>
-            <ArtCard artData={artData}/>
-            <ArtCard />
 
-            <Separator>stories</Separator>
-            <ArtCard />
-            <ArtCard />
+
+            {campaignData.arts.map(art => {
+                return (
+                    <BlockArt destination={art.destination} pieces={art.pieces}/>
+                )
+            })}
+
         </DownloadCampaignStyles>
     )
 }

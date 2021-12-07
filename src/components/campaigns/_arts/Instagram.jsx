@@ -32,6 +32,7 @@ export default function Instagram({ artData }) {
             <p>no canal {local}</p>
             <p>{partner}</p>
             <img src={logo1} alt="" />
+            <img src={logo2} alt="" />
         </InstagramStyles>
     )
 }
