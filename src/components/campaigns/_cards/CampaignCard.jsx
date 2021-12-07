@@ -24,7 +24,6 @@ const CampaignCardStyles = styled.div`
 
     div.image {
         flex: 1;
-        background-color: var(--grey-two);
         margin-right: 16px;
         
         img {
@@ -53,29 +52,22 @@ const CampaignCardStyles = styled.div`
 
 `
 
-// export default function CampaignCard({ title, description, image }) {
-//     return(
-//         <CampaignCardStyles className="card">
-//             <div className="image">
-//                 <img src={image} alt={title} />
-//             </div>
-//             <div className="content">
-//                 <h3>{title}</h3>
-//                 <p>{description}</p>
-//             </div>
-//         </CampaignCardStyles>
-//     )
-// }
+export default function CampaignCard({ campaignData, setScreenState, setCampaignData }) {
+    const { title, image, description } = campaignData;
+    
+    function handleClick() {
+        setCampaignData(campaignData)
+        setScreenState('CREATE_CAMPAIGN');
+    }
 
-export default function CampaignCard({ children, handleClick }) {
     return(
         <CampaignCardStyles className="card" onClick={handleClick}>
             <div className="image">
-                <img src='https://lulacerda.ig.com.br/wp-content/uploads/2016/11/14915488_1173123012733911_861592202832504713_n.jpg' alt='' />
+                <img src={image} alt={title} />
             </div>
             <div className="content">
-                <h3>Título da campanha</h3>
-                <p>detalhes Lorem ipsum dolor detalhes Lorem ipsum dolor sit amet, consectetur adipiscing detalhes Lorem ipsum dolor detalhes </p>
+                <h3>{title}</h3>
+                <p>{description}</p>
             </div>
         </CampaignCardStyles>
     )

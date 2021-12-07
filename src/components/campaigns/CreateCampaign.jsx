@@ -66,13 +66,17 @@ const ButtonCreate = styled(Button)`
     bottom: 5vh;
 `
 
-export default function CreateCampaign({ setScreenState }) {
+export default function CreateCampaign({ setScreenState, campaignData }) {
+    
+    function handleCreateCampaign() {    
+        setScreenState('DOWNLOAD_CAMPAIGN')
+    }
 
     return(
         <CreateCampaignStyles>
             <div className="title">
-                <h2>Título da campanha</h2>
-                <p>detalhes Lorem ipsum dolor detalhes Lorem ipsum dolor sit amet, consectetur adipiscing detalhes Lorem ipsum dolor detalhes </p>
+                <h2>{campaignData.title}</h2>
+                <p>{campaignData.description}</p>
             </div>
 
             <form action="submit">
@@ -88,7 +92,7 @@ export default function CreateCampaign({ setScreenState }) {
             </form>
 
             
-                <ButtonCreate primary onClick={() => setScreenState('DOWNLOAD_CAMPAIGN')}>criar campanha {`>>`}</ButtonCreate>
+                <ButtonCreate primary onClick={handleCreateCampaign}>criar campanha {`>>`}</ButtonCreate>
         </CreateCampaignStyles>
     )
 }

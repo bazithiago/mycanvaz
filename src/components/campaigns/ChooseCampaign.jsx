@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Button from '../_atomicElements/buttons';
 import CampaignCard from './_cards/CampaignCard';
+import { campaigns } from '../../server/campaigns';
 
 
 const ChooseCampaignStyles = styled.div`
@@ -27,27 +28,20 @@ const ChooseCampaignStyles = styled.div`
     }
 `
 
-export default function ChooseCampaign({ setScreenState }) {
-    
-    function handleClick(e) {
-        console.log(e)
-        console.log('clicou')
-        setScreenState('CREATE_CAMPAIGN')    
-    }
+export default function ChooseCampaign({ setScreenState, setCampaignData }) { 
 
     return(
         <ChooseCampaignStyles>
             <div className="title">
                 <h2>Escolha a campanha</h2>
             </div>
-            <CampaignCard handleClick={handleClick}/>
-            <CampaignCard />
-            <CampaignCard />
-            <CampaignCard />
-            <CampaignCard />
-            <CampaignCard />
-            <CampaignCard />
-            <CampaignCard />
+
+            {campaigns.map(campaignData => {
+                return (
+                    <CampaignCard key={campaignData.title} campaignData={campaignData} setScreenState={setScreenState} setCampaignData={setCampaignData}/>
+                )
+            })}
+
             <div className="button">
                 <Button primary>mostrar mais</Button>
             </div>

@@ -27,11 +27,11 @@ const DownloadCampaignStyles = styled.div`
     }
 `
 
-export default function DownloadCampaign() {
+export default function DownloadCampaign({ campaignData }) {
     return(
         <DownloadCampaignStyles>
             <div className="title">
-                <h2>Título da campanha</h2>
+                <h2>{campaignData.title}</h2>
             </div>
             <Separator>feed instagram</Separator>
             <ArtCard />
