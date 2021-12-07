@@ -42,10 +42,10 @@ const HeaderStyles = styled.header`
     }
 `
 
-export default function Header({ setScreenState}) {
+export default function Header() {
 
     return(
-        <HeaderStyles onClick={() => setScreenState('CHOOSE_CAMPAIGN')}>
+        <HeaderStyles onClick={() => window.location.reload(true)}>
             <div className="logo">
                 <Logo fill='white'/>
                 <h1><span>My</span>Canvaz</h1>

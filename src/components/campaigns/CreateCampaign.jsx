@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styled from 'styled-components';
 import Button from '../_atomicElements/buttons';
 
@@ -72,12 +72,11 @@ const ButtonCreate = styled(Button)`
     bottom: 5vh;
 `
 
-export default function CreateCampaign({ setScreenState, campaignData, setArtData }) {
+export default function CreateCampaign({ setScreenState, campaignData }) {
     const setItem = (key, value) => sessionStorage.setItem(`${key}`, `${value}`);
     const [ eventTitle, setEventTitle ] = useState('')
     const [ info, setInfo ] = useState('')
-
-
+    
     function handleCreateCampaign() {
         setScreenState('DOWNLOAD_CAMPAIGN')
     }
@@ -104,6 +103,10 @@ export default function CreateCampaign({ setScreenState, campaignData, setArtDat
         });
     };
 
+    useEffect(() => {
+        sessionStorage.clear()
+    },[])
+
     return(
         <CreateCampaignStyles>
             <div className="title">
@@ -122,8 +125,6 @@ export default function CreateCampaign({ setScreenState, campaignData, setArtDat
                 <input type="file" name="inputFile" id="inputFile" accept=".png, .jpg, .jpeg" onChange={imageUpload}/>
 
             </form>
-
-            
                 <ButtonCreate primary onClick={handleCreateCampaign}>criar campanha {`>>`}</ButtonCreate>
         </CreateCampaignStyles>
     )
