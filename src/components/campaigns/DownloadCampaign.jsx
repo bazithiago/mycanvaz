@@ -14,11 +14,21 @@ const downloadScreenStates = {
 
 export default function DownloadCampaign({ campaignData }) {
     const [ downloadScreenState, setDownloadScreenState ] = useState(downloadScreenStates.CARDS_LIST)
-
+    const [ formData, setFormData ] = useState([])
+    
     return(
         <DownloadCampaignStyles>
-            {downloadScreenState === downloadScreenStates.CARDS_LIST && <CardsList campaignData={campaignData} setDownloadScreenState={setDownloadScreenState} />}
-            {downloadScreenState === downloadScreenStates.ART_VIEWER && <ArtViewer campaignData={campaignData} setDownloadScreenState={setDownloadScreenState} />}
+            {downloadScreenState === downloadScreenStates.CARDS_LIST && 
+                <CardsList
+                    setFormData={setFormData}
+                    campaignData={campaignData} 
+                    setDownloadScreenState={setDownloadScreenState} />}
+            
+            {downloadScreenState === downloadScreenStates.ART_VIEWER && 
+                <ArtViewer 
+                    formData={formData}
+                    campaignData={campaignData} 
+                    setDownloadScreenState={setDownloadScreenState} />}
 
 
         </DownloadCampaignStyles>

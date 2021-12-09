@@ -16,19 +16,19 @@ export const campaigns = [
                     {
                         title: 'Tipo 1',
                         img: '/img/campaigns/blackfriday/bf1.jpg',
-                        path: "/bf1",
+                        cod: "bf1",
                         component: BF1
                     },
                     {
                         title: 'Tipo 2',
                         img: '/img/campaigns/blackfriday/bf2.jpg',
-                        path: "/bf2",
+                        cod: "bf2",
                         // component: BF2
                     },
                     {
                         title: 'Tipo 3',
                         img: '/img/campaigns/blackfriday/bf3.jpg',
-                        path: "/bf3",
+                        cod: "bf3",
                         // component: BF3
                     }
                 ]
@@ -39,7 +39,7 @@ export const campaigns = [
                     {
                         title: 'Tipo 4',
                         img: '/img/campaigns/blackfriday/bf4.jpg',
-                        path: "/bf4",
+                        cod: "bf4",
                         // component: BF4
                     }
                 ]

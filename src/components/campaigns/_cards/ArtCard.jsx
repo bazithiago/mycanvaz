@@ -65,12 +65,13 @@ const ArtCardStyles = styled.div`
 
 
 
-export default function ArtCard({ piece, formData, setDownloadScreenState }) {
-
-    console.log(piece)
-
+export default function ArtCard({ piece, formInputs, setFormData, setDownloadScreenState }) {
+    function handleCreateArt() {
+        setFormData(formInputs);
+        setDownloadScreenState('ART_VIEWER')
+    }
     return(
-            <ArtCardStyles className="card" onClick={() => setDownloadScreenState('ART_VIEWER')}>
+            <ArtCardStyles className="card" onClick={handleCreateArt}>
                 <div className="image">
                     <img src={piece.img} alt=''/>
                 </div>

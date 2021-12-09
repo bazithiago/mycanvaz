@@ -21,7 +21,8 @@ const screenStates = {
 export default function Content() {
     const [ screenState, setScreenState ] = useState(screenStates.CHOOSE_CAMPAIGN)
     const [ campaignData, setCampaignData ] = useState({})
-    
+
+
     return(
         <ContentStyles>
             {screenState === screenStates.CHOOSE_CAMPAIGN && <ChooseCampaign setScreenState={setScreenState} setCampaignData={setCampaignData}/>}
