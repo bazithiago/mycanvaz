@@ -1,8 +1,5 @@
-import { useState } from 'react';
 import styled from 'styled-components';
-import Button, { TextButton } from '../../_atomicElements/buttons';
-import Modal from '../../_atomicElements/Modal'
-import FinalArt from '../_arts/FinalArt'
+import { TextButton } from '../../_atomicElements/buttons';
 
 const ArtCardStyles = styled.div`
     width: 100%;
@@ -15,6 +12,16 @@ const ArtCardStyles = styled.div`
     cursor: pointer;
     display: flex;
     padding: 16px;
+
+    :hover {
+        transform: translateY(-2px);
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    } 
+
+    :active {
+        transform: translateY(0px);
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+    }
 
     div.image {
         flex: 1;
@@ -32,8 +39,9 @@ const ArtCardStyles = styled.div`
     div.content {
         flex: 3;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: space-between;
+        align-items: center;
 
         h3 {
             overflow: hidden;
@@ -45,7 +53,7 @@ const ArtCardStyles = styled.div`
 
     div.buttons {
         display: flex;
-        justify-content: flex-end;
+        align-items: center;
         margin-right: 1rem;
 
         a + a {
@@ -55,48 +63,23 @@ const ArtCardStyles = styled.div`
 
 `
 
-const ModalSyles = styled.div`
-    
-    & > div > div > div > div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    img {
-        width: 100%;
-        border-radius: 10px;
-        margin-bottom: 2rem;
-    }
-`
 
-export default function ArtCard({ piece, formData }) {
-    const [showModal, setShowModal] = useState(false);
 
-    const openModal = () => {
-        setShowModal(prev => !prev);
-    };
+export default function ArtCard({ piece, formData, setDownloadScreenState }) {
+
+    console.log(piece)
 
     return(
-        <ArtCardStyles className="card">
-            <div className="image">
-                <img src={piece.img} alt=''/>
-            </div>
-            <div className="content">
-                <h3>{piece.title}</h3>
-
+            <ArtCardStyles className="card" onClick={() => setDownloadScreenState('ART_VIEWER')}>
+                <div className="image">
+                    <img src={piece.img} alt=''/>
+                </div>
+                <div className="content">
+                    <h3>{piece.title}</h3>
+                </div>
                 <div className="buttons">
-                    <TextButton textButton onClick={openModal}>visualizar</TextButton>
-                    <TextButton textButton>baixar</TextButton>
-                </div>               
-
-                <ModalSyles>
-                    <Modal showModal={showModal} setShowModal={setShowModal}>
-                        <FinalArt imgBg={piece.img} formData={formData}/>
-                        <Button primary>download</Button>
-                    </Modal>
-                </ModalSyles>
-            </div>
-        </ArtCardStyles>
+                    <TextButton textButton>abrir {`>>`}</TextButton>
+                </div> 
+            </ArtCardStyles>
     )
 }

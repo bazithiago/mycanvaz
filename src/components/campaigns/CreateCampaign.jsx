@@ -55,7 +55,6 @@ export default function CreateCampaign({ setScreenState, campaignData }) {
             {campaignData.type === 'full' && <FullForm />}
             {campaignData.type === 'simple' && <SimpleForm />}
 
-
             <ButtonCreate primary onClick={handleCreateCampaign}>criar campanha {`>>`}</ButtonCreate>
         </CreateCampaignStyles>
     )

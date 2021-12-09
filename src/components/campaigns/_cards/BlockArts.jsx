@@ -6,13 +6,13 @@ const BlockArtStyles = styled.div`
 
 `
 
-export default function BlockArt({ destination, pieces, formData }) {
+export default function BlockArt({ destination, pieces, formData, setDownloadScreenState }) {
     return(
         <BlockArtStyles>
             <Separator>{destination}</Separator>
             {pieces.map(piece => {
                 return(
-                    <ArtCard piece={piece} formData={formData}/>
+                    <ArtCard piece={piece} formData={formData} setDownloadScreenState={setDownloadScreenState}/>
                 )
             })}
         </BlockArtStyles>

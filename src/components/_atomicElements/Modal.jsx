@@ -13,27 +13,34 @@ const Background = styled.div`
     top: 0;
     left: 0;
     z-index: 20;
+    cursor: default;
 `;
 
 const ModalWrapper = styled.div`
-    width: 90vw;
     padding: 5%; 
     box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
-    background: #fff;
-    color: #000;
+    background:white;
     position: relative;
     z-index: 21;
     border-radius: 10px;
-    display: flex; 
-    flex-direction: column;
+
+    @media screen and (min-width: 768px) {
+        /* height: 80vh; */
+    }
 
     @media screen and (min-width: 1024px) {
-        width: 100%;
+        /* width: 60vw; */
+    }
+
+    @media screen and (min-width: 1200px) {
+        /* width: 40vw; */
     }
 `;
 
 const ModalContent = styled.div`
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
 
@@ -76,7 +83,7 @@ const Modal = ({ showModal, setShowModal, children }) => {
     <>
       {showModal ? (
         <Background onClick={closeModal} ref={modalRef}>
-          <animated.div style={animation}>
+          <animated.div style={animation} className='animated'>
             <ModalWrapper showModal={showModal}>
               
               <ModalContent>

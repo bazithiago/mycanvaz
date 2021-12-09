@@ -15,8 +15,8 @@ const ContentStyles = styled.section`
 const screenStates = {
     CHOOSE_CAMPAIGN: 'CHOOSE_CAMPAIGN',
     CREATE_CAMPAIGN: 'CREATE_CAMPAIGN',
-    DOWNLOAD_CAMPAIGN: 'DOWNLOAD_CAMPAIGN',
-  }
+    DOWNLOAD_CAMPAIGN: 'DOWNLOAD_CAMPAIGN'
+}
 
 export default function Content() {
     const [ screenState, setScreenState ] = useState(screenStates.CHOOSE_CAMPAIGN)
@@ -27,7 +27,6 @@ export default function Content() {
             {screenState === screenStates.CHOOSE_CAMPAIGN && <ChooseCampaign setScreenState={setScreenState} setCampaignData={setCampaignData}/>}
             {screenState === screenStates.CREATE_CAMPAIGN && <CreateCampaign setScreenState={setScreenState} campaignData={campaignData} />}
             {screenState === screenStates.DOWNLOAD_CAMPAIGN && <DownloadCampaign setScreenState={setScreenState} campaignData={campaignData} />}
-            
         </ContentStyles>
     )
 }
