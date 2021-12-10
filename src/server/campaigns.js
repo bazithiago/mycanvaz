@@ -1,7 +1,7 @@
 import BF1 from '../components/campaigns/_finalArts/BF1.jsx'
-// import BF2 from '../components/campaigns/_finalArts/BF2.jsx'
-// import BF3 from '../components/campaigns/_finalArts/BF3.jsx'
-// import BF4 from '../components/campaigns/_finalArts/BF4.jsx'
+import BF2 from '../components/campaigns/_finalArts/BF2.jsx'
+import BF3 from '../components/campaigns/_finalArts/BF3.jsx'
+import BF4 from '../components/campaigns/_finalArts/BF4.jsx'
 
 export const campaigns = [
     {
@@ -16,20 +16,17 @@ export const campaigns = [
                     {
                         title: 'Tipo 1',
                         img: '/img/campaigns/blackfriday/bf1.jpg',
-                        cod: "bf1",
                         component: BF1
                     },
                     {
                         title: 'Tipo 2',
                         img: '/img/campaigns/blackfriday/bf2.jpg',
-                        cod: "bf2",
-                        // component: BF2
+                        component: BF2
                     },
                     {
                         title: 'Tipo 3',
                         img: '/img/campaigns/blackfriday/bf3.jpg',
-                        cod: "bf3",
-                        // component: BF3
+                        component: BF3
                     }
                 ]
             },
@@ -39,8 +36,7 @@ export const campaigns = [
                     {
                         title: 'Tipo 4',
                         img: '/img/campaigns/blackfriday/bf4.jpg',
-                        cod: "bf4",
-                        // component: BF4
+                        component: BF4
                     }
                 ]
             }

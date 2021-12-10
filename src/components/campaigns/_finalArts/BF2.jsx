@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { campaigns } from '../../../server/campaigns';
 
-const BF1Styles = styled.div`
+const BF2Styles = styled.div`
 
 `
 
-export default function BF1() {
-    const imgBG = campaigns[0].arts[0].pieces[0].img
+export default function BF2() {
+    const imgBG = campaigns[0].arts[0].pieces[1].img
     const getItem = item => sessionStorage.getItem(item)
     const eventName = getItem('eventName'); 
     const personName = getItem('personName'); 
@@ -17,7 +17,7 @@ export default function BF1() {
     const logo2 = getItem('logo2');
     
     return(
-        <BF1Styles>
+        <BF2Styles>
             <img src={imgBG} alt=""/>
             <p>{eventName}</p>
             <p>{personName}</p>
@@ -26,6 +26,6 @@ export default function BF1() {
             <p>{partner}</p>
             <img src={logo1} alt="" srcset="" />
             <img src={logo2} alt="" srcset="" />
-        </BF1Styles>
+        </BF2Styles>
     )
 }

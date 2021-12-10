@@ -22,13 +22,14 @@ export default function DownloadCampaign({ campaignData }) {
                 <CardsList
                     setFormData={setFormData}
                     campaignData={campaignData} 
-                    setDownloadScreenState={setDownloadScreenState} />}
+                    setDownloadScreenState={setDownloadScreenState} 
+                />}
             
             {downloadScreenState === downloadScreenStates.ART_VIEWER && 
                 <ArtViewer 
                     formData={formData}
-                    campaignData={campaignData} 
-                    setDownloadScreenState={setDownloadScreenState} />}
+                    setDownloadScreenState={setDownloadScreenState} 
+                />}
 
 
         </DownloadCampaignStyles>

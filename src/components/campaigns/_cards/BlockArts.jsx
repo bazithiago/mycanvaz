@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import uniqid from 'uniqid';
 import Separator from '../../_atomicElements/separators';
 import ArtCard from './ArtCard';
 
@@ -12,7 +13,8 @@ export default function BlockArt({ destination, pieces, setFormData, formInputs,
             <Separator>{destination}</Separator>
             {pieces.map(piece => {
                 return(
-                    <ArtCard 
+                    <ArtCard
+                        key={uniqid()} 
                         piece={piece}
                         formInputs={formInputs}
                         setFormData={setFormData} 

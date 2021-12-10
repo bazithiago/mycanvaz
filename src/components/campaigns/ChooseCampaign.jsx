@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import uniqid from 'uniqid';
 import Button from '../_atomicElements/buttons';
 import CampaignCard from './_cards/CampaignCard';
 import { campaigns } from '../../server/campaigns';
@@ -38,7 +39,11 @@ export default function ChooseCampaign({ setScreenState, setCampaignData }) {
 
             {campaigns.map(campaignData => {
                 return (
-                    <CampaignCard key={campaignData.title} campaignData={campaignData} setScreenState={setScreenState} setCampaignData={setCampaignData}/>
+                    <CampaignCard 
+                        key={uniqid()}
+                        campaignData={campaignData} 
+                        setScreenState={setScreenState} 
+                        setCampaignData={setCampaignData}/>
                 )
             })}
 
