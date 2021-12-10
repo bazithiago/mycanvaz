@@ -1,0 +1,9 @@
+:root {
+    --dark-blue:rgb(0, 39, 78);
+    --light-blue: rgb(0, 160, 226);
+    --salmon: rgb(209, 168, 144);
+}
+
+p {
+    font-family: 'Exo' !important;
+}

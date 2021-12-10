@@ -2,21 +2,21 @@ import { createGlobalStyle } from 'styled-components';
  
 const GlobalStyle = createGlobalStyle`
     * {
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    border: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        outline: 0;
+        border: 0;
     }
 
     :root {
-    --primary: #1CB5E0;
-    --blue-one: #0040A0;
-    --grey-one: #52698B;
-    --grey-two: #BBC1CB;
-    --dark: #606060;
-    --background: #FCFEFF
+        --primary: #1CB5E0;
+        --blue-one: #0040A0;
+        --grey-one: #52698B;
+        --grey-two: #BBC1CB;
+        --dark: #606060;
+        --background: #FCFEFF
     }
 
 
