@@ -5,13 +5,13 @@ const ArtViewerStyles = styled.div`
 
 `
 
-export default function ArtViewer({ formData }) {
+export default function ArtViewer({ formData, setDownloadScreenState }) {
     const Component = formData.component  
     
     return(
         <ArtViewerStyles>
             
-            <Component />
+            <Component setDownloadScreenState={setDownloadScreenState}/>
 
         </ArtViewerStyles>
     )

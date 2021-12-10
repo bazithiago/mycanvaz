@@ -6,6 +6,17 @@ import '../../../styles/BF.css'
 import Button from '../../_atomicElements/buttons';
 
 const BF1Styles = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .buttons {
+        margin-bottom: 2rem;
+
+        button + button {
+            margin-left: 1.5rem;
+        }
+    }
 
     .canvas {
         width: 100%;
@@ -116,7 +127,7 @@ const BF1Styles = styled.div`
     }
 `
 
-export default function BF1() {
+export default function BF1({ setDownloadScreenState }) {
     const imgBG = campaigns[0].arts[0].pieces[0].img
     const getItem = item => sessionStorage.getItem(item)
     const eventName = getItem('eventName'); 
@@ -143,10 +154,17 @@ export default function BF1() {
             console.log(err)
             })
     }, [ref])
+
+    const backState = () => {
+        setDownloadScreenState('CARDS_LIST');
+    };
     
     return(
         <BF1Styles>
-            <Button primary onClick={onButtonClick}>DOWNLOAD</Button>
+            <div className="buttons">
+                <Button secondary onClick={backState}>voltar </Button>
+                <Button primary onClick={onButtonClick}>DOWNLOAD</Button>
+            </div>
             <div ref={ref} className='canvas'>
                 <img src={imgBG} alt=""/>
 
