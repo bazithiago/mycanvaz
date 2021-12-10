@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { campaigns } from '../../../server/campaigns';
 import { toPng } from 'html-to-image';
 import '../../../styles/BF.css'
-import Button from '../../_atomicElements/buttons';
+import Button, { TextButton } from '../../_atomicElements/buttons';
 
 const BF1Styles = styled.div`
     display: flex;
@@ -13,7 +13,7 @@ const BF1Styles = styled.div`
     .buttons {
         margin-bottom: 2rem;
 
-        button + button {
+        button {
             margin-left: 1.5rem;
         }
     }
@@ -162,7 +162,7 @@ export default function BF1({ setDownloadScreenState }) {
     return(
         <BF1Styles>
             <div className="buttons">
-                <Button secondary onClick={backState}>voltar </Button>
+                <TextButton  onClick={backState}>voltar </TextButton>
                 <Button primary onClick={onButtonClick}>DOWNLOAD</Button>
             </div>
             <div ref={ref} className='canvas'>

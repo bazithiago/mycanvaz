@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import styled from 'styled-components';
-import Button from '../_atomicElements/buttons';
+import Button, { TextButton } from '../_atomicElements/buttons';
 import FullForm from './_forms/FullForm';
 import SimpleForm from './_forms/SimpleForm';
 
@@ -25,14 +25,19 @@ const CreateCampaignStyles = styled.div`
         }
     }
 
+    div.buttons {
+        margin-top: 2rem;
+
+        button {
+            margin-left: 1.5rem;
+        }
+    }
+
     @media screen and (min-width: 1024px) {
         width: 40vw;  
     }
 `
 
-const ButtonCreate = styled(Button)`
-    margin-top: 2rem;
-`
 
 export default function CreateCampaign({ setScreenState, campaignData }) {
     
@@ -55,7 +60,10 @@ export default function CreateCampaign({ setScreenState, campaignData }) {
             {campaignData.type === 'full' && <FullForm />}
             {campaignData.type === 'simple' && <SimpleForm />}
 
-            <ButtonCreate primary onClick={handleCreateCampaign}>criar campanha {`>>`}</ButtonCreate>
+            <div className="buttons">
+                <TextButton onClick={() => setScreenState('CHOOSE_CAMPAIGN')}>voltar </TextButton>
+                <Button primary onClick={handleCreateCampaign}>criar campanha {`>>`}</Button>
+            </div>
         </CreateCampaignStyles>
     )
 }

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import styled from 'styled-components';
 import CardsList from './_cards/CardsList';
 import ArtViewer from './_finalArts/ArtViewer';
@@ -12,16 +12,18 @@ const downloadScreenStates = {
     ART_VIEWER: 'ART_VIEWER'
 }
 
-export default function DownloadCampaign({ campaignData }) {
+export default function DownloadCampaign({ campaignData, setScreenState }) {
     const [ downloadScreenState, setDownloadScreenState ] = useState(downloadScreenStates.CARDS_LIST)
     const [ formData, setFormData ] = useState([])
     
     return(
         <DownloadCampaignStyles>
+
             {downloadScreenState === downloadScreenStates.CARDS_LIST && 
                 <CardsList
                     setFormData={setFormData}
-                    campaignData={campaignData} 
+                    campaignData={campaignData}
+                    setScreenState={setScreenState} 
                     setDownloadScreenState={setDownloadScreenState} 
                 />}
             
@@ -30,8 +32,7 @@ export default function DownloadCampaign({ campaignData }) {
                     formData={formData}
                     setDownloadScreenState={setDownloadScreenState} 
                 />}
-
-
+            
         </DownloadCampaignStyles>
     )
 }

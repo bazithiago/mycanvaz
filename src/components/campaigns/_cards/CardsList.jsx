@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import uniqid from 'uniqid';
+import { TextButton } from '../../_atomicElements/buttons';
 import BlockArt from './BlockArts';
 
 const CardsListStyles = styled.div`
@@ -22,16 +23,23 @@ const CardsListStyles = styled.div`
         margin-top: 1.25rem;
     }
 
+    & > a {
+        align-self: flex-start;
+        margin-bottom: 1rem;
+    }
+
     @media screen and (min-width: 1024px) {
         width: 40vw;  
     }
 `
 
-export default function CardsList({ campaignData, setFormData, setDownloadScreenState }) {
+export default function CardsList({ campaignData, setFormData, setScreenState, setDownloadScreenState }) {
     
 
     return(
         <CardsListStyles>
+            <TextButton onClick={() => setScreenState('CREATE_CAMPAIGN')}> {`<<`} voltar </TextButton>
+
             <div className="title">
                 <h2>{campaignData.title}</h2>
             </div>
