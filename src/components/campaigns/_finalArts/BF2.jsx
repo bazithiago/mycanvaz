@@ -5,7 +5,7 @@ import { toPng } from 'html-to-image';
 import '../../../styles/BF.css'
 import Button, { TextButton } from '../../_atomicElements/buttons';
 
-const BF1Styles = styled.div`
+const BF2Styles = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -131,7 +131,7 @@ const BF1Styles = styled.div`
     }
 `
 
-export default function BF1({ setDownloadScreenState }) {
+export default function BF2({ setDownloadScreenState }) {
     const imgBG = campaigns[0].arts[0].pieces[1].img
     const getItem = item => sessionStorage.getItem(item)
     const eventName = getItem('eventName'); 
@@ -164,7 +164,7 @@ export default function BF1({ setDownloadScreenState }) {
     };
     
     return(
-        <BF1Styles>
+        <BF2Styles>
             <div className="buttons">
                 <TextButton  onClick={backState}>voltar </TextButton>
                 <Button primary onClick={onButtonClick}>DOWNLOAD</Button>
@@ -185,7 +185,7 @@ export default function BF1({ setDownloadScreenState }) {
                     </div>
 
                     <div className="partnerGroup">
-                        <p className="partner">apoio</p>
+                        <p className="partner">{partner}</p>
                         <div className="logos">
                             <div className="logo1">
                                 <img src={logo1} alt="" />
@@ -197,7 +197,7 @@ export default function BF1({ setDownloadScreenState }) {
                     </div>
                 </div>
             </div>
-        </BF1Styles>
+        </BF2Styles>
     )
 }
 
