@@ -34,26 +34,47 @@ const DC1Styles = styled.div`
             
             .title {
                 position: absolute;
-                bottom: 17vw;
-                left: 20vw;
+                bottom: 13vw;
                 color: var(--brown);
                 font-weight: 900;
                 text-transform: uppercase;
                 width: 50vw;
                 text-align: center;
-                font-size: 3vw;
+                font-size: 3.5vw;
+                left: 50%;
+                transform: translate(-50%, -50%);
             }
 
             .description {
                 position: absolute;
+                bottom: 3vw;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 2vw;
+                color: var(--beige);
+                text-align: center;
+                width: 50%;
             }
 
             .highlight {
                 position: absolute;
+                top: 60vw;
+                right: 6vw;
+                color: white;
+                font-size: 3vw;
+                font-weight: 900;
+                transform: rotate(-13deg);
             }
 
             .destination {
                 position: absolute;
+                bottom: 1vw;   
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                font-size: 2.5vw;
+                color: var(--orange);
+                font-weight: 900;
             }
 
             
