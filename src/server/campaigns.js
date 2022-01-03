@@ -102,21 +102,27 @@ export const campaigns = [
     {
         title: 'Páscoa 2021',
         description: 'Campanha páscoa - abr/2021',
-        image: 'img/campaigns/diadascriancas/banner1.jpg'
+        image: 'img/campaigns/general/easter-eggs.jpg'
     },
     {
-        title: 'Páscoa 2021',
-        description: 'Campanha páscoa - abr/2021',
-        image: 'img/campaigns/diadascriancas/banner1.jpg'
+        title: 'Vacinação',
+        description: 'Campanha vacinação - abr/2021',
+        image: 'img/campaigns/general/vax-rawpixel.jpg'
     },
     {
-        title: 'Páscoa 2021',
-        description: 'Campanha páscoa - abr/2021',
-        image: 'img/campaigns/diadascriancas/banner1.jpg'
+        title: 'Influenciadores digitais',
+        description: 'Campanha com influencers para cliente X - maio/2021',
+        image: 'img/campaigns/general/influencers-freepik.jpg'
     },
     {
-        title: 'Páscoa 2021',
-        description: 'Campanha páscoa - abr/2021',
-        image: 'img/campaigns/diadascriancas/banner1.jpg'
+        title: 'Novos empreendedores digitais',
+        description: 'Campanha empreendedorismo digital - aug/2021',
+        image: 'img/campaigns/general/senivpetro.jpg'
     },
+    {
+        title: 'Comunicado interno',
+        description: 'Exemplo de campanha para endomarketing - mar/2021',
+        image: 'img/campaigns/general/holding-megaphone-rawpixel.jpg'
+    },
+    
 ]
