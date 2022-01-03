@@ -4,6 +4,7 @@ import BF3 from '../components/campaigns/_finalArts/BF3.jsx'
 import BF4 from '../components/campaigns/_finalArts/BF4.jsx'
 import DC1 from '../components/campaigns/_finalArts/DC1.jsx'
 import DC2 from '../components/campaigns/_finalArts/DC2.jsx'
+import DC3 from '../components/campaigns/_finalArts/DC3.jsx'
 
 export const campaigns = [
     {
@@ -70,7 +71,8 @@ export const campaigns = [
                 pieces: [
                     {
                         title: 'Stories 1',
-                        img: '/img/campaigns/diadascriancas/stories1.jpg'
+                        img: '/img/campaigns/diadascriancas/stories1.jpg',
+                        component: DC3
                     },
                     {
                         title: 'Stories 2',
