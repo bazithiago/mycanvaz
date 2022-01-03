@@ -3,6 +3,7 @@ import BF2 from '../components/campaigns/_finalArts/BF2.jsx'
 import BF3 from '../components/campaigns/_finalArts/BF3.jsx'
 import BF4 from '../components/campaigns/_finalArts/BF4.jsx'
 import DC1 from '../components/campaigns/_finalArts/DC1.jsx'
+import DC2 from '../components/campaigns/_finalArts/DC2.jsx'
 
 export const campaigns = [
     {
@@ -59,7 +60,8 @@ export const campaigns = [
                     },
                     {
                         title: 'Feed 2',
-                        img: '/img/campaigns/diadascriancas/post2.jpg'
+                        img: '/img/campaigns/diadascriancas/post2.jpg',
+                        component: DC2
                     },
                 ]
             },
