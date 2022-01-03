@@ -9,6 +9,7 @@ const CampaignCardStyles = styled.div`
     max-height: 120px;
     transition: all 0.2s;
     cursor: pointer;
+    cursor: ${props => !props.type && 'not-allowed'};
     display: flex;
     padding: 16px;
 
@@ -53,15 +54,20 @@ const CampaignCardStyles = styled.div`
 `
 
 export default function CampaignCard({ campaignData, setScreenState, setCampaignData }) {
-    const { title, image, description } = campaignData;
-    
+    const { title, image, description, type } = campaignData;
+    console.log(type)
+
     function handleClick() {
-        setCampaignData(campaignData)
-        setScreenState('CREATE_CAMPAIGN');
+        if (type) {
+            setCampaignData(campaignData)
+            setScreenState('CREATE_CAMPAIGN');
+        } else {
+            return
+        }
     }
 
     return(
-        <CampaignCardStyles className="card" onClick={handleClick}>
+        <CampaignCardStyles className="card" onClick={handleClick} type={type}>
             <div className="image">
                 <img src={image} alt={title} />
             </div>

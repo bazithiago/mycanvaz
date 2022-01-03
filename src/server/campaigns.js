@@ -99,4 +99,24 @@ export const campaigns = [
             }
         ]
     },
+    {
+        title: 'Páscoa 2021',
+        description: 'Campanha páscoa - abr/2021',
+        image: 'img/campaigns/diadascriancas/banner1.jpg'
+    },
+    {
+        title: 'Páscoa 2021',
+        description: 'Campanha páscoa - abr/2021',
+        image: 'img/campaigns/diadascriancas/banner1.jpg'
+    },
+    {
+        title: 'Páscoa 2021',
+        description: 'Campanha páscoa - abr/2021',
+        image: 'img/campaigns/diadascriancas/banner1.jpg'
+    },
+    {
+        title: 'Páscoa 2021',
+        description: 'Campanha páscoa - abr/2021',
+        image: 'img/campaigns/diadascriancas/banner1.jpg'
+    },
 ]
