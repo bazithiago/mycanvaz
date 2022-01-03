@@ -59,11 +59,12 @@ const DC1Styles = styled.div`
             .highlight {
                 position: absolute;
                 top: 60vw;
-                right: 6vw;
+                right: 8vw;
                 color: white;
                 font-size: 3vw;
                 font-weight: 900;
                 transform: rotate(-13deg);
+                text-align: center;
             }
 
             .destination {
