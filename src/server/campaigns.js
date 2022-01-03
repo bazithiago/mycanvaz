@@ -6,6 +6,7 @@ import DC1 from '../components/campaigns/_finalArts/DC1.jsx'
 import DC2 from '../components/campaigns/_finalArts/DC2.jsx'
 import DC3 from '../components/campaigns/_finalArts/DC3.jsx'
 import DC4 from '../components/campaigns/_finalArts/DC4.jsx'
+import DC6 from '../components/campaigns/_finalArts/DC6.jsx'
 
 export const campaigns = [
     {
@@ -80,10 +81,10 @@ export const campaigns = [
                         img: '/img/campaigns/diadascriancas/stories2.jpg',
                         component: DC4
                     },
-                    {
-                        title: 'Stories 3',
-                        img: '/img/campaigns/diadascriancas/stories3.jpg'
-                    }
+                    // {
+                    //     title: 'Stories 3',
+                    //     img: '/img/campaigns/diadascriancas/stories3.jpg'
+                    // }
                 ]
             },
             {
@@ -91,7 +92,8 @@ export const campaigns = [
                 pieces: [
                     {
                         title: 'Banner tipo 1',
-                        img: '/img/campaigns/diadascriancas/banner1.jpg'
+                        img: '/img/campaigns/diadascriancas/banner1.jpg',
+                        component: DC6
                     }
                 ]
             }
