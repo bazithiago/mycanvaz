@@ -29,6 +29,10 @@ const BF1Styles = styled.div`
         .content {
             width: 100%;
 
+            p {
+                font-family: 'Exo';
+            }
+
             .eventDate {
                 position: absolute;
                 top: 42.9vw;

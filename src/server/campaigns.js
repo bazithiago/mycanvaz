@@ -2,6 +2,7 @@ import BF1 from '../components/campaigns/_finalArts/BF1.jsx'
 import BF2 from '../components/campaigns/_finalArts/BF2.jsx'
 import BF3 from '../components/campaigns/_finalArts/BF3.jsx'
 import BF4 from '../components/campaigns/_finalArts/BF4.jsx'
+import DC1 from '../components/campaigns/_finalArts/DC1.jsx'
 
 export const campaigns = [
     {
@@ -44,7 +45,7 @@ export const campaigns = [
     },
     {
         title: 'Dia das crianças',
-        description: 'Campanha dia das criaças no hotel - out/2021',
+        description: 'Campanha dia das crianças no hotel - out/2021',
         image: 'img/campaigns/diadascriancas/banner1.jpg',
         type: 'simple',
         arts: [
@@ -52,11 +53,12 @@ export const campaigns = [
                 destination: 'feed instagram',
                 pieces: [
                     {
-                        title: 'Tipo 1',
-                        img: '/img/campaigns/diadascriancas/post1.jpg'
+                        title: 'Feed 1',
+                        img: '/img/campaigns/diadascriancas/post1.jpg',
+                        component: DC1
                     },
                     {
-                        title: 'Tipo 2',
+                        title: 'Feed 2',
                         img: '/img/campaigns/diadascriancas/post2.jpg'
                     },
                 ]
@@ -65,15 +67,15 @@ export const campaigns = [
                 destination: 'stories instagram',
                 pieces: [
                     {
-                        title: 'Tipo 1',
+                        title: 'Stories 1',
                         img: '/img/campaigns/diadascriancas/stories1.jpg'
                     },
                     {
-                        title: 'Tipo 1',
+                        title: 'Stories 2',
                         img: '/img/campaigns/diadascriancas/stories2.jpg'
                     },
                     {
-                        title: 'Tipo 1',
+                        title: 'Stories 3',
                         img: '/img/campaigns/diadascriancas/stories3.jpg'
                     }
                 ]
